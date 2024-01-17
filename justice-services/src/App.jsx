@@ -1,14 +1,20 @@
 
 import './App.css'
+import { useState } from 'react'
 import justicelogo from "../public/Icons/justicelogo.svg"
 import SearchIcon from "../public/Icons/searchIcon/SearchIcon.svg"
 import MenuIcon from "../public/Icons/MenuIcon/MenuIcon.svg"
 import PhoneIcon from "../public/Icons/PhoneIcon/PhoneIcon.svg"
 import HumanIcon from "../public/Icons/HumanIcon/HumanIcon.svg"
 import Switch from './Components/Switch'
-
+import CloseIcon from "../public/Icons/CloseIcon/CloseIcon.svg"
 
 function App() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
   return (
    <div className='w-[360px] h-[560px]'>
@@ -19,8 +25,10 @@ function App() {
       <div className="w-8 h-8 bg-[#F2F2F2] rounded-full flex items-center justify-center">
         <img src={SearchIcon}/>
       </div>
-      <div className="w-8 h-8 bg-[#F2F2F2] rounded-full flex justify-center items-center">
-        <img src={MenuIcon}/>
+      <div className="w-8 h-8 bg-[#F2F2F2] rounded-full flex justify-center items-center"  onClick={toggleMenu}>
+
+        <img src={isMenuOpen ? CloseIcon : MenuIcon}/>
+
       </div>
        </div>
      </div>
@@ -46,3 +54,5 @@ function App() {
 }
 
 export default App
+
+

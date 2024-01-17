@@ -1,4 +1,4 @@
 
-const Toggle = ({onChange}) => <input type="checkbox" onChange={onChange}/>
+// const Toggle = ({onChange}) => <input type="checkbox" onChange={onChange}/>
 
-export default Toggle
+// export default Toggle
